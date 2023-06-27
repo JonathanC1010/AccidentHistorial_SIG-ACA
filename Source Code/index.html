@@ -30,6 +30,13 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
+        <script src="data/20152020todos_1.js"></script>
+        <script src="data/2020_2.js"></script>
+        <script src="data/2019_3.js"></script>
+        <script src="data/2018_4.js"></script>
+        <script src="data/2017_5.js"></script>
+        <script src="data/2016_6.js"></script>
+        <script src="data/2015_7.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -69,8 +76,191 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        
-        
+                function pop_2015_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + "Municipio: " +  (feature.properties['NOM_MUN'] !== null ? autolinker.link(feature.properties['NOM_MUN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + "Departamento: " + (feature.properties['NOM_DPTO'] !== null ? autolinker.link(feature.properties['NOM_DPTO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + "Accidentes: " + (feature.properties['Accidentes'] !== null ? autolinker.link(feature.properties['Accidentes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + "Fallecidos: " + (feature.properties['Fallecidos'] !== null ? autolinker.link(feature.properties['Fallecidos'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+ "Lesionados: " + (feature.properties['Lesionados'] !== null ? autolinker.link(feature.properties['Lesionados'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_2015_7_0(feature) {
+            if (feature.properties['Accidentes'] >= 0.000000 && feature.properties['Accidentes'] <= 9.000000 ) {
+                return {
+                pane: 'pane_2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 9.000000 && feature.properties['Accidentes'] <= 27.000000 ) {
+                return {
+                pane: 'pane_2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,219,219,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 27.000000 && feature.properties['Accidentes'] <= 53.000000 ) {
+                return {
+                pane: 'pane_2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,182,182,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 53.000000 && feature.properties['Accidentes'] <= 85.000000 ) {
+                return {
+                pane: 'pane_2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,146,146,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 85.000000 && feature.properties['Accidentes'] <= 116.000000 ) {
+                return {
+                pane: 'pane_2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,109,109,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 116.000000 && feature.properties['Accidentes'] <= 174.000000 ) {
+                return {
+                pane: 'pane_2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,73,73,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 174.000000 && feature.properties['Accidentes'] <= 311.000000 ) {
+                return {
+                pane: 'pane_2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,36,36,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 311.000000 && feature.properties['Accidentes'] <= 2550.000000 ) {
+                return {
+                pane: 'pane_2015_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,0,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_2015_7');
+        map.getPane('pane_2015_7').style.zIndex = 407;
+        map.getPane('pane_2015_7').style['mix-blend-mode'] = 'normal';
+        var layer_2015_7 = new L.geoJson(json_2015_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_2015_7',
+            layerName: 'layer_2015_7',
+            pane: 'pane_2015_7',
+            onEachFeature: pop_2015_7,
+            style: style_2015_7_0,
+        });
+        bounds_group.addLayer(layer_2015_7);
+        map.addLayer(layer_2015_7);
+        var osmGeocoder = new L.Control.Geocoder({
+            collapsed: true,
+            position: 'topleft',
+            text: 'Search',
+            title: 'Testing'
+        }).addTo(map);
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .className += ' fa fa-search';
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .title += 'Search for a place';
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'2015<br /><table><tr><td style="text-align: center;"><img src="legend/2015_7_090.png" /></td><td>0 - 9</td></tr><tr><td style="text-align: center;"><img src="legend/2015_7_9271.png" /></td><td>9 - 27</td></tr><tr><td style="text-align: center;"><img src="legend/2015_7_27532.png" /></td><td>27 - 53</td></tr><tr><td style="text-align: center;"><img src="legend/2015_7_53853.png" /></td><td>53 - 85</td></tr><tr><td style="text-align: center;"><img src="legend/2015_7_851164.png" /></td><td>85 - 116</td></tr><tr><td style="text-align: center;"><img src="legend/2015_7_1161745.png" /></td><td>116 - 174</td></tr><tr><td style="text-align: center;"><img src="legend/2015_7_1743116.png" /></td><td>174 - 311</td></tr><tr><td style="text-align: center;"><img src="legend/2015_7_31125507.png" /></td><td>311 - 2550</td></tr></table>': layer_2015_7,'2016<br /><table><tr><td style="text-align: center;"><img src="legend/2016_6_0110.png" /></td><td>0 - 11</td></tr><tr><td style="text-align: center;"><img src="legend/2016_6_11311.png" /></td><td>11 - 31</td></tr><tr><td style="text-align: center;"><img src="legend/2016_6_31592.png" /></td><td>31 - 59</td></tr><tr><td style="text-align: center;"><img src="legend/2016_6_59913.png" /></td><td>59 - 91</td></tr><tr><td style="text-align: center;"><img src="legend/2016_6_911564.png" /></td><td>91 - 156</td></tr><tr><td style="text-align: center;"><img src="legend/2016_6_1562615.png" /></td><td>156 - 261</td></tr><tr><td style="text-align: center;"><img src="legend/2016_6_2614126.png" /></td><td>261 - 412</td></tr><tr><td style="text-align: center;"><img src="legend/2016_6_41226637.png" /></td><td>412 - 2663</td></tr></table>': layer_2016_6,'2017<br /><table><tr><td style="text-align: center;"><img src="legend/2017_5_0110.png" /></td><td>0 - 11</td></tr><tr><td style="text-align: center;"><img src="legend/2017_5_11301.png" /></td><td>11 - 30</td></tr><tr><td style="text-align: center;"><img src="legend/2017_5_30552.png" /></td><td>30 - 55</td></tr><tr><td style="text-align: center;"><img src="legend/2017_5_55853.png" /></td><td>55 - 85</td></tr><tr><td style="text-align: center;"><img src="legend/2017_5_851264.png" /></td><td>85 - 126</td></tr><tr><td style="text-align: center;"><img src="legend/2017_5_1261775.png" /></td><td>126 - 177</td></tr><tr><td style="text-align: center;"><img src="legend/2017_5_1774066.png" /></td><td>177 - 406</td></tr><tr><td style="text-align: center;"><img src="legend/2017_5_40624927.png" /></td><td>406 - 2492</td></tr></table>': layer_2017_5,'2018<br /><table><tr><td style="text-align: center;"><img src="legend/2018_4_070.png" /></td><td>0 - 7</td></tr><tr><td style="text-align: center;"><img src="legend/2018_4_7211.png" /></td><td>7 - 21</td></tr><tr><td style="text-align: center;"><img src="legend/2018_4_21422.png" /></td><td>21 - 42</td></tr><tr><td style="text-align: center;"><img src="legend/2018_4_42733.png" /></td><td>42 - 73</td></tr><tr><td style="text-align: center;"><img src="legend/2018_4_731274.png" /></td><td>73 - 127</td></tr><tr><td style="text-align: center;"><img src="legend/2018_4_1272555.png" /></td><td>127 - 255</td></tr><tr><td style="text-align: center;"><img src="legend/2018_4_2554626.png" /></td><td>255 - 462</td></tr><tr><td style="text-align: center;"><img src="legend/2018_4_46221257.png" /></td><td>462 - 2125</td></tr></table>': layer_2018_4,'2019<br /><table><tr><td style="text-align: center;"><img src="legend/2019_3_090.png" /></td><td>0 - 9</td></tr><tr><td style="text-align: center;"><img src="legend/2019_3_9301.png" /></td><td>9 - 30</td></tr><tr><td style="text-align: center;"><img src="legend/2019_3_30642.png" /></td><td>30 - 64</td></tr><tr><td style="text-align: center;"><img src="legend/2019_3_641153.png" /></td><td>64 - 115</td></tr><tr><td style="text-align: center;"><img src="legend/2019_3_1151634.png" /></td><td>115 - 163</td></tr><tr><td style="text-align: center;"><img src="legend/2019_3_1632195.png" /></td><td>163 - 219</td></tr><tr><td style="text-align: center;"><img src="legend/2019_3_2195126.png" /></td><td>219 - 512</td></tr><tr><td style="text-align: center;"><img src="legend/2019_3_51221967.png" /></td><td>512 - 2196</td></tr></table>': layer_2019_3,'2020<br /><table><tr><td style="text-align: center;"><img src="legend/2020_2_090.png" /></td><td>0 - 9</td></tr><tr><td style="text-align: center;"><img src="legend/2020_2_9261.png" /></td><td>9 - 26</td></tr><tr><td style="text-align: center;"><img src="legend/2020_2_26502.png" /></td><td>26 - 50</td></tr><tr><td style="text-align: center;"><img src="legend/2020_2_50783.png" /></td><td>50 - 78</td></tr><tr><td style="text-align: center;"><img src="legend/2020_2_781194.png" /></td><td>78 - 119</td></tr><tr><td style="text-align: center;"><img src="legend/2020_2_1191775.png" /></td><td>119 - 177</td></tr><tr><td style="text-align: center;"><img src="legend/2020_2_1774276.png" /></td><td>177 - 427</td></tr><tr><td style="text-align: center;"><img src="legend/2020_2_42716187.png" /></td><td>427 - 1618</td></tr></table>': layer_2020_2,'2015-2020 (todos)<br /><table><tr><td style="text-align: center;"><img src="legend/20152020todos_1_0430.png" /></td><td>0 - 43</td></tr><tr><td style="text-align: center;"><img src="legend/20152020todos_1_431131.png" /></td><td>43 - 113</td></tr><tr><td style="text-align: center;"><img src="legend/20152020todos_1_1132242.png" /></td><td>113 - 224</td></tr><tr><td style="text-align: center;"><img src="legend/20152020todos_1_2244133.png" /></td><td>224 - 413</td></tr><tr><td style="text-align: center;"><img src="legend/20152020todos_1_4136644.png" /></td><td>413 - 664</td></tr><tr><td style="text-align: center;"><img src="legend/20152020todos_1_66411905.png" /></td><td>664 - 1190</td></tr><tr><td style="text-align: center;"><img src="legend/20152020todos_1_119025306.png" /></td><td>1190 - 2530</td></tr><tr><td style="text-align: center;"><img src="legend/20152020todos_1_2530136447.png" /></td><td>2530 - 13644</td></tr></table>': layer_20152020todos_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        setBounds();
         </script>
     </body>
 </html>
