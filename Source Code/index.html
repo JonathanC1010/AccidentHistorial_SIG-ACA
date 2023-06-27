@@ -112,6 +112,180 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
+
+        
+        function style_2016_6_0(feature) {
+            if (feature.properties['Accidentes'] >= 0.000000 && feature.properties['Accidentes'] <= 11.000000 ) {
+                return {
+                pane: 'pane_2016_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 11.000000 && feature.properties['Accidentes'] <= 31.000000 ) {
+                return {
+                pane: 'pane_2016_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,219,219,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 31.000000 && feature.properties['Accidentes'] <= 59.000000 ) {
+                return {
+                pane: 'pane_2016_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,182,182,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 59.000000 && feature.properties['Accidentes'] <= 91.000000 ) {
+                return {
+                pane: 'pane_2016_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,146,146,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 91.000000 && feature.properties['Accidentes'] <= 156.000000 ) {
+                return {
+                pane: 'pane_2016_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,109,109,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 156.000000 && feature.properties['Accidentes'] <= 261.000000 ) {
+                return {
+                pane: 'pane_2016_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,73,73,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 261.000000 && feature.properties['Accidentes'] <= 412.000000 ) {
+                return {
+                pane: 'pane_2016_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,36,36,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Accidentes'] >= 412.000000 && feature.properties['Accidentes'] <= 2663.000000 ) {
+                return {
+                pane: 'pane_2016_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,0,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_2016_6');
+        map.getPane('pane_2016_6').style.zIndex = 406;
+        map.getPane('pane_2016_6').style['mix-blend-mode'] = 'normal';
+        var layer_2016_6 = new L.geoJson(json_2016_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_2016_6',
+            layerName: 'layer_2016_6',
+            pane: 'pane_2016_6',
+            onEachFeature: pop_2016_6,
+            style: style_2016_6_0,
+        });
+        bounds_group.addLayer(layer_2016_6);
+        map.addLayer(layer_2016_6);
+        function pop_2015_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + "Municipio: " +  (feature.properties['NOM_MUN'] !== null ? autolinker.link(feature.properties['NOM_MUN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + "Departamento: " + (feature.properties['NOM_DPTO'] !== null ? autolinker.link(feature.properties['NOM_DPTO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + "Accidentes: " + (feature.properties['Accidentes'] !== null ? autolinker.link(feature.properties['Accidentes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + "Fallecidos: " + (feature.properties['Fallecidos'] !== null ? autolinker.link(feature.properties['Fallecidos'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+ "Lesionados: " + (feature.properties['Lesionados'] !== null ? autolinker.link(feature.properties['Lesionados'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
         function style_2015_7_0(feature) {
             if (feature.properties['Accidentes'] >= 0.000000 && feature.properties['Accidentes'] <= 9.000000 ) {
                 return {
