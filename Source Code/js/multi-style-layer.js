@@ -1,3 +1,9 @@
+/*
+* Nombre del archivo: multi-style-layer.js
+* Autor: Rodrigo Antonio Ungo Muñoz
+* Licencia: GPL v2.0
+* Año: 2023
+*/
 !(function () {
     var yes = function () { return true; };
 
