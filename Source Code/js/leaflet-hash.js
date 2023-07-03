@@ -1,5 +1,5 @@
 /*
-* Nombre del archivo: Autolinker.min.js
+* Nombre del archivo: leaflet-hash.js
 * Autor: Rodrigo Antonio Ungo Muñoz
 * Licencia: GPL v2.0
 * Año: 2023
