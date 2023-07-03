@@ -1,3 +1,11 @@
+/*
+* Nombre del archivo: leaflet.rotatedMarker.js
+* Autor: Rodrigo Antonio Ungo Muñoz
+* Licencia: GPL v2.0
+* Año: 2023
+*/
+
+
 (function() {
     // save these original methods before they are overwritten
     var proto_initIcon = L.Marker.prototype._initIcon;

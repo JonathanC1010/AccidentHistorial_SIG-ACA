@@ -1,4 +1,12 @@
 /*
+* Nombre del archivo: Leaflet-heat.js
+* Autor: Rodrigo Antonio Ungo Muñoz
+* Licencia: GPL v2.0
+* Año: 2023
+*/
+
+
+/*
  (c) 2014, Vladimir Agafonkin
  simpleheat, a tiny JavaScript library for drawing heatmaps with Canvas
  https://github.com/mourner/simpleheat

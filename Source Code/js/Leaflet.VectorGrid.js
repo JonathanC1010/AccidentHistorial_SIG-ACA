@@ -1,3 +1,11 @@
+/*
+* Nombre del archivo: Leaflet.VectorGrid.js
+* Autor: Rodrigo Antonio Ungo Muñoz
+* Licencia: GPL v2.0
+* Año: 2023
+*/
+
+
 (function () {
 'use strict';
 

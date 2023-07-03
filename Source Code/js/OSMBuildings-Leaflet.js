@@ -1,3 +1,11 @@
+/*
+* Nombre del archivo: OSMBuildiongs-Leaflet.js
+* Autor: Rodrigo Antonio Ungo Muñoz
+* Licencia: GPL v2.0
+* Año: 2023
+*/
+
+
 (function(ca){function S(b,a){var c=b.x-a.x,d=b.y-a.y;return c*c+d*d}function va(b){var a=b.length;if(16>a)return!1;var c,d=Infinity,f=-Infinity,e=Infinity,g=-Infinity;for(c=0;c<a-1;c+=2)d=Math.min(d,b[c]),f=Math.max(f,b[c]),e=Math.min(e,b[c+1]),g=Math.max(g,b[c+1]);c=f-d;g-=e;f=c/g;if(0.85>f||1.15<f)return!1;d={x:d+c/2,y:e+g/2};c=(c+g)/4;e=c*c;for(c=0;c<a-1;c+=2)if(g=S({x:b[c],y:b[c+1]},d),0.8>g/e||1.2<g/e)return!1;return!0}function ja(b,a){var c={};b/=T;a/=T;var d=wa,f;f=0>=a?90:1<=a?-90:(2*xa(ya(E*
 (1-2*a)))-J)/E*180;c[d]=f;c[za]=360*(1===b?1:(b%1+1)%1)-180;return c}function da(b,a){var c=U(1,K(0,0.5-Aa(ka(Ba+J*b/180))/E/2));return{x:(a/360+0.5)*T<<0,y:c*T<<0}}function V(b){for(var a=B+p,c=v+n,d=0,f=b.length-3;d<f;d+=2)if(b[d]>p&&b[d]<a&&b[d+1]>n&&b[d+1]<c)return!0;return!1}function Ca(){$||($=setInterval(function(){for(var b=F.items,a=!1,c=0,d=b.length;c<d;c++)1>b[c].scale&&(b[c].scale+=0.1,1<b[c].scale&&(b[c].scale=1),a=!0);A.render();a||(clearInterval($),$=null)},33))}function ea(b){M=W+
 b.x;N=v+b.y;A.render(!0)}function la(b){B=b.width;v=b.height;W=B/2<<0;fa=v/2<<0;M=W;N=v;A.setSize(B,v);ga=q-50}function ma(b){x=b;T=Da<<x;b=ja(p+W,n+fa);var a=da(b.latitude,0);na=da(b.latitude,1).x-a.x;C=oa(0.95,x-G);ha=""+H.alpha(C);aa=""+ba.alpha(C);X=""+O.alpha(C)}var u=Math,ya=u.exp,Aa=u.log,Ea=u.sin,Fa=u.cos,ka=u.tan,xa=u.atan,P=u.atan2,U=u.min,K=u.max,pa=u.sqrt,qa=u.ceil,oa=u.pow,ra=ra||Array,sa=sa||Array,u=/iP(ad|hone|od)/g.test(navigator.userAgent),t=!!~navigator.userAgent.indexOf("Trident"),
