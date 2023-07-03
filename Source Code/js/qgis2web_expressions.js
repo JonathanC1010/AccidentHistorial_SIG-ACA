@@ -1,3 +1,10 @@
+/*
+* Nombre del archivo: qgis2web-expressions.js
+* Autor: Rodrigo Antonio Ungo Muñoz
+* Licencia: GPL v2.0
+* Año: 2023
+*/
+
 // Aggregates
 
 // Color
