@@ -1,3 +1,10 @@
+/*
+* Nombre del archivo: leaflet.js
+* Autor: Rodrigo Antonio Ungo Muñoz
+* Licencia: GPL v2.0
+* Año: 2023
+*/
+
 /* @preserve
  * Leaflet 1.6.0+Detached: 0c81bdf904d864fd12a286e3d1979f47aba17991.0c81bdf, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2019 Vladimir Agafonkin, (c) 2010-2011 CloudMade
