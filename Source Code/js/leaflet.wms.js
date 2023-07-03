@@ -1,3 +1,11 @@
+/*
+* Nombre del archivo: leaflet.wms.js
+* Autor: Rodrigo Antonio Ungo Muñoz
+* Licencia: GPL v2.0
+* Año: 2023
+*/
+
+
 /*!
  * leaflet.wms.js
  * A collection of Leaflet utilities for working with Web Mapping services.
